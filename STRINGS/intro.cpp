@@ -1,6 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+char tolowerCase(char ch){
+    if(ch >= 'a' && ch<='z'){
+        return ch;
+
+    }
+    else{
+        char temp = ch-'A'+'a';
+        return temp; 
+    }
+}
+
 void reverse(char name[],int n){
     int s=0;
     int e = n-1;
@@ -24,7 +36,7 @@ bool checkPalindrome(char a[],int n){
     int s = 0;
     int e = n-1;
     while(s<=e){
-        if(a[s] != a[e]){
+        if(tolowerCase(a[s]) != tolowerCase(a[e])){
             return false;
         }
         
@@ -58,6 +70,10 @@ int main(){
 
 
     cout<<"palindrome or not: "<<checkPalindrome(name,len)<<endl;
+
+    cout<<"CHARACTER IS "<<tolowerCase('a')<<endl;
+    cout<<"CHARACTER IS "<<tolowerCase('S');
+    
 
 
     //cout<<"length is "<<getLength(name)<<endl;

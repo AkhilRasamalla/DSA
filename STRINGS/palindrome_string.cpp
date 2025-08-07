@@ -1,5 +1,6 @@
 class Solution {
   public:
+
     bool isPalindrome(string& s) {
         // code here
         int start = 0;
