@@ -1,6 +1,8 @@
-class Solution {
+class Solution
+{
 public:
-    int lengthOfLongestSubstring(string s) {
+    int lengthOfLongestSubstring(string s)
+    {
         // int n = s.size();
         // int maxLen = 0;
         // for(int i=0;i<n;i++){
@@ -23,19 +25,21 @@ public:
         int r = 0;
         int maxLen = 0;
         unordered_set<int> seen;
-        while(r < n){
-            if(seen.find(s[r]) != seen.end()){
+        while (r < n)
+        {
+            if (seen.find(s[r]) != seen.end())
+            {
                 seen.erase(s[l]);
                 l++;
             }
-            else{
+            else
+            {
                 seen.insert(s[r]);
-               int currentElement = r-l+1;
-               maxLen = max(maxLen,currentElement);
-               r++;
-
+                int currentElement = r - l + 1;
+                maxLen = max(maxLen, currentElement);
+                r++;
             }
-            //r++;
+            // r++;
         }
         return maxLen;
     }
